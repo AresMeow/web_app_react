@@ -33,8 +33,8 @@ function App() {
         };
 
         try {
-            tg.sendData(JSON.stringify(data));
-            tg.close();
+            telegramApp.sendData(JSON.stringify(data));
+            telegramApp.close();
         } catch (error) {
             console.error("Ошибка при отправке данных:", error);
             alert("Произошла ошибка при отправке данных.");
@@ -48,8 +48,8 @@ function App() {
         };
 
         try {
-            tg.sendData(JSON.stringify(data));
-            tg.close();
+            telegramApp.sendData(JSON.stringify(data));
+            telegramApp.close();
         } catch (error) {
             console.error("Ошибка при отправке данных:", error);
             alert("Произошла ошибка при отправке данных.");

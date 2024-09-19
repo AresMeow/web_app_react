@@ -10,19 +10,19 @@
 .auth-container {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px; /* Уменьшено */
+    border-radius: 10px; /* Уменьшено */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Уменьшено */
     text-align: center;
-    max-width: 400px;
+    max-width: 300px; /* Уменьшено */
     width: 100%;
 }
 
 .close-icon {
     position: absolute;
     top: 5px;
-    right: 13px;
-    font-size: 1.5rem;
+    right: 10px; /* Уменьшено */
+    font-size: 1.2rem; /* Уменьшено */
     color: #ff1900;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -33,32 +33,32 @@
 }
 
 h1 {
-    font-size: 2.8rem;
-    margin-bottom: 25px;
+    font-size: 2rem; /* Уменьшено */
+    margin-bottom: 15px; /* Уменьшено */
     color: #fff;
 }
 
 p {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+    font-size: 1rem; /* Уменьшено */
+    margin-bottom: 10px; /* Уменьшено */
     color: #ddd;
 }
 
 .input-field {
-    width: 380px;
-    padding: 12px;
-    margin-bottom: 20px;
+    width: 280px; /* Уменьшено */
+    padding: 10px; /* Уменьшено */
+    margin-bottom: 15px; /* Уменьшено */
     border: none;
-    border-radius: 10px;
+    border-radius: 8px; /* Уменьшено */
     background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.8) 0%,
         rgba(255, 255, 255, 0.6) 100%
     );
     color: #333;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Уменьшено */
     outline: none;
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1); /* Уменьшено */
     transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -72,12 +72,12 @@ p {
         rgba(255, 255, 255, 1) 0%,
         rgba(255, 255, 255, 0.8) 100%
     );
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.5); /* Уменьшено */
     transform: scale(1.02);
 }
 
 .input-field:hover {
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3); /* Уменьшено */
 }
 
 .input-field:focus-visible {
@@ -86,24 +86,24 @@ p {
 
 .submit-btn,
 .close-btn {
-    width: 400px;
-    padding: 12px;
+    width: 300px; /* Уменьшено */
+    padding: 10px; /* Уменьшено */
     border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    border-radius: 8px; /* Уменьшено */
+    font-size: 1rem; /* Уменьшено */
     cursor: pointer;
     color: white;
     background-color: #48d057;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Уменьшено */
     transition: all 0.3s ease;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Уменьшено */
 }
 
 .submit-btn:hover,
 .close-btn:hover {
     background-color: #18c16a;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Уменьшено */
+    transform: translateY(-1px); /* Уменьшено */
 }
 
 .submit-btn:active,
