@@ -1,10 +1,120 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.App {
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
 }
 
-* {
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
+.auth-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 13px;
+    font-size: 1.5rem;
+    color: #ff1900;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+    color: #c0392b;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.input-field {
+    width: 380px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.6) 100%
+    );
+    color: #333;
+    font-size: 1.1rem;
+    outline: none;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.input-field::placeholder {
+    color: #aaa;
+}
+
+.input-field:focus {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+    transform: scale(1.02);
+}
+
+.input-field:hover {
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.input-field:focus-visible {
+    outline: 2px solid #a68e8e;
+}
+
+.submit-btn,
+.close-btn {
+    width: 400px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: white;
+    background-color: #48d057;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.submit-btn:hover,
+.close-btn:hover {
+    background-color: #18c16a;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active,
+.close-btn:active {
+    transform: scale(0.95);
+}
+
+.close-btn {
+    background-color: #e74c3c;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
 }
