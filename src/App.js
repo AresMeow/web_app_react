@@ -8,10 +8,10 @@ function App() {
     const [token, setToken] = useState("");
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false); // Состояние для видимости пароля
 
     useEffect(() => {
         telegramApp.ready();
-
         const params = new URLSearchParams(window.location.search);
         const responseType = params.get("response_type");
 
@@ -28,10 +28,7 @@ function App() {
     };
 
     const handleTokenSubmit = () => {
-        const data = {
-            token,
-        };
-
+        const data = { token };
         try {
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
@@ -42,11 +39,7 @@ function App() {
     };
 
     const handleCredentialsSubmit = () => {
-        const data = {
-            login,
-            password,
-        };
-
+        const data = { login, password };
         try {
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
@@ -54,6 +47,10 @@ function App() {
             console.error("Ошибка при отправке данных:", error);
             alert("Произошла ошибка при отправке данных.");
         }
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev);
     };
 
     return (
@@ -91,13 +88,22 @@ function App() {
                             onChange={(e) => setLogin(e.target.value)}
                             className="input-field"
                         />
-                        <input
-                            type="password"
-                            placeholder="Пароль"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="input-field"
-                        />
+                        <div className="password-container">
+                            <input
+                                type={showPassword ? "text" : "password"} // Изменение типа поля
+                                placeholder="Пароль"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="input-field"
+                            />
+                            <span
+                                className="toggle-password"
+                                onClick={togglePasswordVisibility}
+                            >
+                                {showPassword ? "🙈" : "👁️"}{" "}
+                                {/* Иконка для переключения */}
+                            </span>
+                        </div>
                         <button
                             className="submit-btn"
                             onClick={handleCredentialsSubmit}
