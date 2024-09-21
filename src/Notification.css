@@ -1,14 +1,14 @@
 .notification {
     position: fixed;
-    justify-content: center;
-    align-items: center;
+    top: 20px;
+    right: 29px;
     background-color: rgba(255, 0, 0, 0.8);
     color: white;
     padding: 10px 15px;
-    bottom: 730px;
     border-radius: 5px;
     animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
-    z-index: 1000; /* чтобы уведомление было сверху */
+    z-index: 1000;
+    user-select: none;
 }
 
 @keyframes slideIn {
