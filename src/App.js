@@ -32,7 +32,7 @@ function App() {
 
     const handleTokenSubmit = () => {
         if (!token) {
-            showError("ㅤㅤㅤКлюч доступа не указан.ㅤㅤㅤ");
+            showError("Ключ доступа не указан.");
             return;
         }
         const data = { type: "auth", token };
