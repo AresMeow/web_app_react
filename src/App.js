@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Notification from "./Notification"; // Импортируйте компонент уведомлений
+import Notification from "./Notification";
 
 const telegramApp = window.Telegram.WebApp;
 
@@ -11,6 +11,7 @@ function App() {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [notificationVisible, setNotificationVisible] = useState(false);
 
     useEffect(() => {
         telegramApp.ready();
@@ -58,8 +59,15 @@ function App() {
     };
 
     const showError = (message) => {
+        if (notificationVisible) return; // Если уведомление уже видно, не показываем новое
+
         setErrorMessage(message);
-        setTimeout(() => setErrorMessage(""), 3000);
+        setNotificationVisible(true);
+
+        setTimeout(() => {
+            setErrorMessage("");
+            setNotificationVisible(false);
+        }, 3000);
     };
 
     const togglePasswordVisibility = () => {
@@ -131,8 +139,8 @@ function App() {
                     </p>
                 )}
             </div>
-            {errorMessage && <Notification message={errorMessage} />}{" "}
-            {/* Уведомление */}
+
+            {notificationVisible && <Notification message={errorMessage} />}
         </div>
     );
 }

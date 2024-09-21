@@ -1,12 +1,12 @@
 .notification {
     position: fixed;
     top: 20px;
-    right: 32px;
+    right: 20px;
     background-color: rgba(255, 0, 0, 0.8);
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
-    animation: slideIn 0.5s forwards, fadeOut 3s 2.5s forwards;
+    animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
     z-index: 1000; /* чтобы уведомление было сверху */
 }
 
@@ -27,5 +27,6 @@
     }
     100% {
         opacity: 0;
+        transform: translateY(-20px);
     }
 }
