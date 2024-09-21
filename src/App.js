@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Notification from "./Notification"; // Импортируйте компонент уведомлений
 
 const telegramApp = window.Telegram.WebApp;
 
@@ -8,7 +9,8 @@ function App() {
     const [token, setToken] = useState("");
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false); // Состояние для видимости пароля
+    const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         telegramApp.ready();
@@ -28,25 +30,36 @@ function App() {
     };
 
     const handleTokenSubmit = () => {
-        const data = { type: "auth", token };
-        try {
-            telegramApp.sendData(JSON.stringify(data));
-            telegramApp.close();
-        } catch (error) {
-            console.error("Ошибка при отправке данных:", error);
-            alert("Произошла ошибка при отправке данных.");
+        if (!token) {
+            showError("Ключ доступа не указан.");
+            return;
         }
+        const data = { type: "auth", token };
+        sendData(data);
     };
 
     const handleCredentialsSubmit = () => {
+        if (!login || !password) {
+            showError("Логин и пароль должны быть указаны.");
+            return;
+        }
         const data = { type: "auth", login, password };
+        sendData(data);
+    };
+
+    const sendData = (data) => {
         try {
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
         } catch (error) {
             console.error("Ошибка при отправке данных:", error);
-            alert("Произошла ошибка при отправке данных.");
+            showError("Произошла ошибка при отправке данных.");
         }
+    };
+
+    const showError = (message) => {
+        setErrorMessage(message);
+        setTimeout(() => setErrorMessage(""), 3000);
     };
 
     const togglePasswordVisibility = () => {
@@ -90,7 +103,7 @@ function App() {
                         />
                         <div className="password-container">
                             <input
-                                type={showPassword ? "text" : "password"} // Изменение типа поля
+                                type={showPassword ? "text" : "password"}
                                 placeholder="Пароль"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
@@ -118,6 +131,8 @@ function App() {
                     </p>
                 )}
             </div>
+            {errorMessage && <Notification message={errorMessage} />}{" "}
+            {/* Уведомление */}
         </div>
     );
 }
