@@ -16,6 +16,14 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Небольшая тень для визуального эффекта */
 }
 
+@media (max-width: 768px) {
+    .notification {
+        margin-right: auto;
+        margin-left: 10px;
+        max-width: 90%;
+    }
+}
+
 @keyframes slideIn {
     from {
         transform: translateY(-20px);
