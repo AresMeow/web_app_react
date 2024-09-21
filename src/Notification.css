@@ -4,7 +4,7 @@
     right: 0; /* Выровнять уведомление по правому краю */
     width: 100%; /* Ширина на всю страницу */
     max-width: 300px; /* Ограничение максимальной ширины (аналогично auth-container) */
-    margin-right: 33px; /* Учитываем, что auth-container также по центру */
+    margin-right: 22px; /* Учитываем, что auth-container также по центру */
     background-color: rgba(255, 0, 0, 0.8);
     color: white;
     padding: 10px 15px;
