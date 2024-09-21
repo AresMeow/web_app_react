@@ -28,7 +28,7 @@ function App() {
     };
 
     const handleTokenSubmit = () => {
-        const data = { token };
+        const data = { type: "auth", token };
         try {
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
@@ -39,7 +39,7 @@ function App() {
     };
 
     const handleCredentialsSubmit = () => {
-        const data = { login, password };
+        const data = { type: "auth", login, password };
         try {
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
@@ -100,8 +100,7 @@ function App() {
                                 className="toggle-password"
                                 onClick={togglePasswordVisibility}
                             >
-                                {showPassword ? "🙈" : "👁️"}{" "}
-                                {/* Иконка для переключения */}
+                                {showPassword ? "🙈" : "👁️"} {}
                             </span>
                         </div>
                         <button
