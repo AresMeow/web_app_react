@@ -21,7 +21,6 @@ function App() {
         if (responseType === "access_token" || responseType === "credentials") {
             setAuthType(responseType);
         } else {
-            console.error("Неправильный response_type");
             setAuthType("error");
         }
     }, []);
@@ -35,7 +34,8 @@ function App() {
             showError("Ключ доступа не указан.");
             return;
         }
-        const data = { type: "auth", token };
+
+        const data = { command: "authrization", token };
         sendData(data);
     };
 
@@ -44,7 +44,8 @@ function App() {
             showError("Логин и пароль должны быть указаны.");
             return;
         }
-        const data = { type: "auth", login, password };
+
+        const data = { command: "authrization", login, password };
         sendData(data);
     };
 
@@ -53,13 +54,12 @@ function App() {
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
         } catch (error) {
-            console.error("Ошибка при отправке данных:", error);
             showError("Произошла ошибка при отправке данных.");
         }
     };
 
     const showError = (message) => {
-        if (notificationVisible) return; // Если уведомление уже видно, не показываем новое
+        if (notificationVisible) return;
 
         setErrorMessage(message);
         setNotificationVisible(true);
