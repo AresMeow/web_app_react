@@ -35,7 +35,7 @@ function App() {
             return;
         }
 
-        const data = { command: "authrization", token };
+        const data = { command: "authorization", token };
         sendData(data);
     };
 
@@ -45,7 +45,7 @@ function App() {
             return;
         }
 
-        const data = { command: "authrization", login, password };
+        const data = { command: "authorization", login, password };
         sendData(data);
     };
 
