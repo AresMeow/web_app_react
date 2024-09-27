@@ -51,8 +51,9 @@ function App() {
 
     const sendData = (data) => {
         try {
-            const { viewportHeight } = Telegram.WebApp;
-            console.log(viewportHeight);
+            let { innerHeight: height, innerWidth: width } = window;
+            alert(height, width);
+            return;
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
         } catch (error) {
