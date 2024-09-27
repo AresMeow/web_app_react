@@ -52,7 +52,8 @@ function App() {
     const sendData = (data) => {
         try {
             let { innerHeight: height, innerWidth: width } = window;
-            alert(height, width);
+            alert(height);
+            alert(width);
             return;
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
