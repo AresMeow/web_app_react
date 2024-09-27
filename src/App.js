@@ -20,9 +20,6 @@ function App() {
 
         if (responseType === "access_token" || responseType === "credentials") {
             setAuthType(responseType);
-            const { viewportHeight, viewportStableHeight } = Telegram.WebApp;
-            alert("Текущая высота:", viewportHeight);
-            alert("Стабильная высота:", viewportStableHeight);
         } else {
             setAuthType("error");
         }
@@ -54,6 +51,8 @@ function App() {
 
     const sendData = (data) => {
         try {
+            const { viewportHeight } = Telegram.WebApp;
+            console.log(viewportHeight);
             telegramApp.sendData(JSON.stringify(data));
             telegramApp.close();
         } catch (error) {
