@@ -1,15 +1,30 @@
-import { useState, useEffect } from "react";
-import body from "./body.svg";
-import first_wave from "./first_wave.svg";
-import "./App.css";
+import FirstWave from "./FirstWave.svg";
+import SecondWave from "./SecondWave.svg";
+import CollegeLogo from "./college.png";
+import DnevnikLogo from "./dnevnik.png";
 
-const telegramApp = window.Telegram.WebApp;
+import "./App.css";
 
 function App() {
     return (
         <div className="App">
-            <img className="body" alt="Body" src={body} />
-            <img className="first_wave" alt="FirstWave" src={first_wave} />
+            <div className="Main">
+                <img className="wave fw" src={FirstWave} alt="First Wave" />
+                <img className="wave sw" src={SecondWave} alt="Second Wave" />
+
+                <div className="logo">
+                    <img
+                        className="college"
+                        src={CollegeLogo}
+                        alt="College Logo"
+                    />
+                    <img
+                        className="dnevnik"
+                        src={DnevnikLogo}
+                        alt="Dnevnik Logo"
+                    />
+                </div>
+            </div>
         </div>
     );
 }

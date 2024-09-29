@@ -1,25 +1,44 @@
-.App {
-    height: 722px;
+:root {
+    --font-family: "Calibri", sans-serif;
+}
+
+.Main {
     width: 390px;
-}
-
-.App .body {
     height: 722px;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 390px;
+    background: #13121a;
+    position: relative;
 }
 
-.first_wave {
-    height: 86px;
-    width: 360px;
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-.box .vector {
-    height: 86px;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 360px;
+.fw {
+    z-index: 1;
+}
+
+.sw {
+    z-index: 2;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
+}
+
+.college {
+    width: 122px;
+    height: 104px;
+}
+
+.dnevnik {
+    width: 148px;
+    height: 52px;
+    margin-top: 10px;
 }
