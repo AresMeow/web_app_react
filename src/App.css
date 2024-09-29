@@ -2,7 +2,7 @@
     --font-family: "Calibri", sans-serif;
 }
 
-.Main {
+.container {
     width: 390px;
     height: 722px;
     background: #13121a;
@@ -23,7 +23,7 @@
     z-index: 2;
 }
 
-.logo {
+.logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +35,60 @@
 .college {
     width: 122px;
     height: 104px;
+    margin-top: 20px;
 }
 
 .dnevnik {
     width: 148px;
     height: 52px;
     margin-top: 10px;
+}
+
+.fline {
+    border: 1.5px solid rgba(40, 53, 80, 0.7);
+    width: 82px;
+    height: 0px;
+}
+
+.sline {
+    border: 1.5px solid rgba(40, 53, 80, 0.7);
+    width: 80px;
+    height: 0px;
+}
+
+.auth {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 20px;
+    color: #e2e2e2;
+    opacity: 0.8;
+}
+
+input[type="text"] {
+    border: 2px solid #34384e;
+    border-radius: 15px;
+    width: 341px;
+    height: 44px;
+    background: #13121a;
+    opacity: 0.8;
+}
+
+.input-field {
+    position: relative;
+    left: 30px;
+}
+
+::placeholder {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 17px;
+    color: rgba(99, 97, 97, 0.6);
+    position: relative;
+    left: 30px;
+}
+
+.text {
+    position: relative;
+    left: 27px;
+    z-index: 3;
 }
