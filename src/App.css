@@ -1,3 +1,25 @@
 .App {
-    position: relative;
+    height: 722px;
+    width: 390px;
+}
+
+.App .body {
+    height: 722px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 390px;
+}
+
+.first_wave {
+    height: 86px;
+    width: 360px;
+}
+
+.box .vector {
+    height: 86px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 360px;
 }
